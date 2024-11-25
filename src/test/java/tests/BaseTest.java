@@ -47,11 +47,11 @@ public class BaseTest {
         return response;
     }
 
-    protected Response getRequestWithParam(String endpoint, int expectedStatusCode, String paramName, int id) {
+    protected Response getRequestWithParam(String endpoint, int expectedStatusCode, String paramName, String paramValue) {
         Response response = RestAssured.given()
                 .spec(specification)
                 .when()
-                .pathParam(paramName, id)
+                .pathParam(paramName, paramValue)
                 .log().all()
                 .get(endpoint)
                 .then().log().all()

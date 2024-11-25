@@ -17,7 +17,7 @@ public class PostRegistry {
         post.setDescription("First post created with Rest Assured");
         post.setBody(paragraph);
         post.setImageUrl("");
-        post.setPublishDate("2024-11-25 17:51:23");
+        post.setPublishDate("2024-11-25 19:18");
         post.setDraft(false);
         return post;
     }
