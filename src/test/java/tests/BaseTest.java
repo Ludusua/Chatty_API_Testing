@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class BaseTest {
     final static String BASE_URI = "http://chatty.telran-edu.de:8989";
-    final static String TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4NDFkNjQzNC00ZDQwLTQ2MTgtYjZjNC02MzAyYmQ4YzczNjQiLCJpYXQiOjE3MzI0NzEyNjgsImV4cCI6MTczMjY0NDA2OH0.7TB3IX1F-yAsxqOz1xOyS6NX5tBn-qPQnBA_iNn74QE";
+    final static String TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4NDFkNjQzNC00ZDQwLTQ2MTgtYjZjNC02MzAyYmQ4YzczNjQiLCJpYXQiOjE3MzI2NDQ3MzUsImV4cCI6MTczMjgxNzUzNX0.zInMfYmMjyz6YWCfNERgl8no8zITBwHyZ_bHjMhyEAk";
     static RequestSpecification specification = new RequestSpecBuilder()
             .setBaseUri(BASE_URI)
             .addHeader("Authorization", "Bearer " + TOKEN)

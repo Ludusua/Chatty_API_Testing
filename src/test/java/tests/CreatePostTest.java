@@ -9,7 +9,7 @@ import static tests.UtilUrl.CREATE_POST;
 
 public class CreatePostTest {
     @Test
-    public void successPostCreating() {
+    public void successNonDraftPostCreating() {
         PostRequest postBody = PostRegistry.getNormalNonDraftPost();
         PostResponse response = postRequest(CREATE_POST, 201, postBody)
                 .body().jsonPath().getObject("", PostResponse.class);
@@ -17,6 +17,15 @@ public class CreatePostTest {
         assertFalse(response.getTitle().isEmpty());
         assertFalse(response.getBody().isEmpty());
         assertFalse(response.getDescription().isEmpty());
-
+    }
+    @Test
+    public void successDraftPostCreating() {
+        PostRequest postBody = PostRegistry.getNormalDraftPost();
+        PostResponse response = postRequest(CREATE_POST, 201, postBody)
+                .body().jsonPath().getObject("", PostResponse.class);
+        assertFalse(response.getId().isEmpty());
+        assertFalse(response.getTitle().isEmpty());
+        assertFalse(response.getBody().isEmpty());
+        assertFalse(response.getDescription().isEmpty());
     }
 }
