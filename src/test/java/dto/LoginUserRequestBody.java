@@ -1,12 +1,12 @@
 package dto;
 
-public class LoginUserRequest {
+public class LoginUserRequestBody {
     private String email;
     private String password;
-    public LoginUserRequest() {
+    public LoginUserRequestBody() {
     }
 
-    public LoginUserRequest(String email, String password) {
+    public LoginUserRequestBody(String email, String password) {
         this.email = email;
         this.password = password;
     }

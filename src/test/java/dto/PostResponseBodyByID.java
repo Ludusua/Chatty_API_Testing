@@ -1,25 +1,38 @@
 package dto;
 
-public class PostRequest {
+public class PostResponseBodyByID {
+    private String id;
     private String title;
     private String description;
     private String body;
     private String imageUrl;
-    private String publishDate;
+    private String createdAt;
+    private String updatedAt;
     private boolean draft;
+    private User user;
 
-    public PostRequest(String title, String description, String body, String imageUrl, String publishDate, boolean draft) {
+    public PostResponseBodyByID() {
+    }
+
+    public PostResponseBodyByID(String id, String title, String description, String body, String imageUrl, String createdAt, String updatedAt, boolean draft, User user) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.body = body;
         this.imageUrl = imageUrl;
-        this.publishDate = publishDate;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.draft = draft;
+        this.user = user;
     }
 
-    public PostRequest() {
+    public String getId() {
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -53,12 +66,20 @@ public class PostRequest {
         this.imageUrl = imageUrl;
     }
 
-    public String getPublishDate() {
-        return publishDate;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPublishDate(String publishDate) {
-        this.publishDate = publishDate;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public boolean isDraft() {
@@ -67,5 +88,13 @@ public class PostRequest {
 
     public void setDraft(boolean draft) {
         this.draft = draft;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

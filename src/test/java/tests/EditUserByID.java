@@ -1,13 +1,11 @@
 package tests;
 
-import dto.RegistrationUserResponse;
 import dto.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static tests.UtilUrl.PUT_USER_BY_ID;
-import static tests.UtilUrl.USER_LOGIN;
 
 public class EditUserByID extends BaseTest{
 

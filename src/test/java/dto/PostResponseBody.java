@@ -1,6 +1,6 @@
 package dto;
 
-public class PostResponse {
+public class PostResponseBody {
     private String id;
     private String title;
     private String description;
@@ -11,10 +11,10 @@ public class PostResponse {
     private boolean draft;
     private String userId;
 
-    public PostResponse() {
+    public PostResponseBody() {
     }
 
-    public PostResponse(String id, String title, String description, String body, String imageUrl, String publishDate, String updatedAt, boolean draft, String userId) {
+    public PostResponseBody(String id, String title, String description, String body, String imageUrl, String publishDate, String updatedAt, boolean draft, String userId) {
         this.id = id;
         this.title = title;
         this.description = description;

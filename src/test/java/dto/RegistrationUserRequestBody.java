@@ -3,16 +3,16 @@ package dto;
 import lombok.Builder;
 
     @Builder
-    public class RegistrationUserRequest {
+    public class RegistrationUserRequestBody {
         private String email;
         private String password;
         private String confirmPassword;
         private String role;
 
-        public RegistrationUserRequest() {
+        public RegistrationUserRequestBody() {
         }
 
-        public RegistrationUserRequest(String email, String password, String confirmPassword, String role) {
+        public RegistrationUserRequestBody(String email, String password, String confirmPassword, String role) {
             this.email = email;
             this.password = password;
             this.confirmPassword = confirmPassword;

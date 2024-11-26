@@ -2,17 +2,15 @@ package dto;
 
 import com.github.javafaker.Faker;
 
-import java.util.List;
-
 public class PostRegistry {
     private PostRegistry() {
     }
 
 
-    public static PostRequest getNormalNonDraftPost() {
+    public static PostRequestBody getNormalNonDraftPost() {
         Faker faker = new Faker();
         String paragraph = faker.lorem().paragraph();
-        PostRequest post = new PostRequest();
+        PostRequestBody post = new PostRequestBody();
         post.setTitle("Created with Rest Assured");
         post.setDescription("First post created with Rest Assured");
         post.setBody(paragraph);
@@ -21,10 +19,22 @@ public class PostRegistry {
         post.setDraft(false);
         return post;
     }
-    public static PostRequest getNormalDraftPost() {
+    public static PostRequestBody getNormalForDeletingPost() {
         Faker faker = new Faker();
         String paragraph = faker.lorem().paragraph();
-        PostRequest post = new PostRequest();
+        PostRequestBody post = new PostRequestBody();
+        post.setTitle("Created post specially for deleting");
+        post.setDescription("Created post specially for deleting");
+        post.setBody(paragraph);
+        post.setImageUrl("");
+        post.setPublishDate("2024-11-26 19:18");
+        post.setDraft(false);
+        return post;
+    }
+    public static PostRequestBody getNormalDraftPost() {
+        Faker faker = new Faker();
+        String paragraph = faker.lorem().paragraph();
+        PostRequestBody post = new PostRequestBody();
         post.setTitle("Created with Rest Assured");
         post.setDescription("First post created with Rest Assured");
         post.setBody(paragraph);
@@ -34,10 +44,10 @@ public class PostRegistry {
         return post;
     }
 
-    public static PostRequest updatedPost() {
+    public static PostRequestBody updatedPost() {
         Faker faker = new Faker();
         String paragraph = faker.lorem().paragraph();
-        PostRequest post = new PostRequest();
+        PostRequestBody post = new PostRequestBody();
         post.setTitle("Updated post");
         post.setDescription("First post created and updated with Rest Assured");
         post.setBody(paragraph);

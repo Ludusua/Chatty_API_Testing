@@ -1,40 +1,25 @@
 package dto;
 
-import java.util.List;
-
-public class PostResponseByID {
-    private String id;
+public class PostRequestBody {
     private String title;
     private String description;
     private String body;
     private String imageUrl;
-    private String createdAt;
-    private String updatedAt;
+    private String publishDate;
     private boolean draft;
-    private User user;
 
-    public PostResponseByID() {
-    }
-
-    public PostResponseByID(String id, String title, String description, String body, String imageUrl, String createdAt, String updatedAt, boolean draft, User user) {
-        this.id = id;
+    public PostRequestBody(String title, String description, String body, String imageUrl, String publishDate, boolean draft) {
         this.title = title;
         this.description = description;
         this.body = body;
         this.imageUrl = imageUrl;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.publishDate = publishDate;
         this.draft = draft;
-        this.user = user;
     }
 
-    public String getId() {
-        return id;
+    public PostRequestBody() {
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -68,20 +53,12 @@ public class PostResponseByID {
         this.imageUrl = imageUrl;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public String getPublishDate() {
+        return publishDate;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate;
     }
 
     public boolean isDraft() {
@@ -90,13 +67,5 @@ public class PostResponseByID {
 
     public void setDraft(boolean draft) {
         this.draft = draft;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

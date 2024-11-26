@@ -140,4 +140,18 @@ public class BaseTest {
         response.then().assertThat().statusCode(expectedStatusCode);
         return response;
     }
+    protected Response deleteRequestWithParam(String endpoint, int expectedStatusCode, String paramName, String paramValue) {
+        Response response = RestAssured.given()
+                .spec(specification)
+                .when()
+                .pathParam(paramName, paramValue)
+                .log().all()
+                .delete(endpoint)
+                .then().log().all()
+                .statusCode(expectedStatusCode)
+                .extract().response();
+        return response;
+    }
+
+
 }

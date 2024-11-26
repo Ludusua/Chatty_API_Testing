@@ -1,8 +1,8 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import dto.RegistrationUserRequest;
-import dto.RegistrationUserResponse;
+import dto.RegistrationUserRequestBody;
+import dto.RegistrationUserResponseBody;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,9 +18,9 @@ public class RegistrationUserTest extends BaseTest {
         String confirmPpassword = password;
         String role = "user";
 
-        RegistrationUserRequest requestBody = new RegistrationUserRequest(email,password,confirmPpassword,role);
-        RegistrationUserResponse response = postRequestWithoutToken(USER_REGISTRATION,201,requestBody)
-                .body().jsonPath().getObject("", RegistrationUserResponse.class);
+        RegistrationUserRequestBody requestBody = new RegistrationUserRequestBody(email,password,confirmPpassword,role);
+        RegistrationUserResponseBody response = postRequestWithoutToken(USER_REGISTRATION,201,requestBody)
+                .body().jsonPath().getObject("", RegistrationUserResponseBody.class);
         assertFalse(response.getAccessToken().isEmpty());
         assertFalse(response.getRefreshToken().isEmpty());
         assertNotNull(response.getExpiration());
