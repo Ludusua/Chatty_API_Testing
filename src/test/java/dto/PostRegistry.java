@@ -54,4 +54,16 @@ public class PostRegistry {
         post.setDraft(true);
         return post;
     }
+    public static PostRequestBody getNormalNonDraftPostWithEmptyTitle() {
+        Faker faker = new Faker();
+        String paragraph = faker.lorem().paragraph();
+        PostRequestBody post = new PostRequestBody();
+        post.setTitle("");
+        post.setDescription("First post created with Rest Assured");
+        post.setBody(paragraph);
+        post.setImageUrl("");
+        post.setPublishDate("2024-11-25 19:18");
+        post.setDraft(false);
+        return post;
+    }
 }

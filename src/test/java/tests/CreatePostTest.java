@@ -2,7 +2,8 @@ package tests;
 
 import dto.*;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import static org.junit.jupiter.api.Assertions.*;
 import static tests.BaseTest.postRequest;
 import static tests.UtilUrl.CREATE_POST;
 
@@ -37,5 +38,13 @@ public class CreatePostTest {
         assertFalse(response.getTitle().isEmpty());
         assertFalse(response.getBody().isEmpty());
         assertFalse(response.getDescription().isEmpty());
+    }
+    @Test
+    public void creatingPostWithEmptyTitle() {
+        PostRequestBody postBody = PostRegistry.getNormalNonDraftPostWithEmptyTitle();
+        ErrorResponseBodyByCreatingPost response = postRequest(CREATE_POST, 400, postBody)
+                .body().jsonPath().getObject("", ErrorResponseBodyByCreatingPost.class);
+        assertTrue(response.getTitle().get(0).contains("Title can not be empty!"));
+        assertTrue(response.getTitle().get(1).contains("Title must contain from 1 to 40 characters"));
     }
 }
