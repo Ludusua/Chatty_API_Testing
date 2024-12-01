@@ -17,7 +17,7 @@ public class UpdatePostByID extends BaseTest {
         PostResponseBodyByID response = putRequestWithParam(UPDATE_POST_BY_ID, 200, requestUpdateBody, "id", postId)
                 .body().jsonPath().getObject("", PostResponseBodyByID.class);
         assertEquals(response.getId(), postId);
-        assertEquals(response.getTitle(), "Updated post");
+        assertEquals(response.getTitle(), requestUpdateBody.getTitle());
         assertEquals(response.getDescription(), requestUpdateBody.getDescription());
         assertNotEquals(response.getUpdatedAt(), response.getCreatedAt());
         assertTrue(response.isDraft());

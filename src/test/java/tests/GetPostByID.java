@@ -5,6 +5,8 @@ import dto.PostResponseBodyByID;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static tests.UtilResponseData.INVALID_STATUS;
+import static tests.UtilResponseData.INVALID_UUID;
 import static tests.UtilUrl.*;
 
 public class GetPostByID extends BaseTest {
@@ -26,8 +28,8 @@ public class GetPostByID extends BaseTest {
         String invalidPostId = "31a9ee-4f9c-a749-2dcc3fab6428";
         ErrorResponseBody response = getRequestWithParam(GET_POST_BY_ID,500,"id",invalidPostId)
                 .body().jsonPath().getObject("", ErrorResponseBody.class);
-        assertEquals(response.getHttpStatus(),"INTERNAL_SERVER_ERROR");
-        assertTrue(response.getMessage().contains("Invalid UUID string"));
+        assertEquals(response.getHttpStatus(),INVALID_STATUS);
+        assertTrue(response.getMessage().contains(INVALID_UUID));
     }
 
 }

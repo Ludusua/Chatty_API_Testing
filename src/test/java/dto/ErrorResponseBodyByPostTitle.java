@@ -2,14 +2,14 @@ package dto;
 
 import java.util.List;
 
-public class ErrorResponseBodyByCreatingPost {
+public class ErrorResponseBodyByPostTitle {
     List<String> title;
 
-    public ErrorResponseBodyByCreatingPost(List<String> title) {
+    public ErrorResponseBodyByPostTitle(List<String> title) {
         this.title = title;
     }
 
-    public ErrorResponseBodyByCreatingPost() {
+    public ErrorResponseBodyByPostTitle() {
     }
 
     public List<String> getTitle() {

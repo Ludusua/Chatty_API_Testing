@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static tests.BaseTest.postRequest;
+import static tests.UtilResponseData.*;
 import static tests.UtilUrl.CREATE_POST;
 
 
@@ -42,9 +43,18 @@ public class CreatePostTest {
     @Test
     public void creatingPostWithEmptyTitle() {
         PostRequestBody postBody = PostRegistry.getNormalNonDraftPostWithEmptyTitle();
-        ErrorResponseBodyByCreatingPost response = postRequest(CREATE_POST, 400, postBody)
-                .body().jsonPath().getObject("", ErrorResponseBodyByCreatingPost.class);
-        assertTrue(response.getTitle().get(0).contains("Title can not be empty!"));
-        assertTrue(response.getTitle().get(1).contains("Title must contain from 1 to 40 characters"));
+        ErrorResponseBodyByPostTitle response = postRequest(CREATE_POST, 400, postBody)
+                .body().jsonPath().getObject("", ErrorResponseBodyByPostTitle.class);
+        assertTrue(response.getTitle().get(0).contains(EMPTY_TITLE_RESPONSE));
+        assertTrue(response.getTitle().get(1).contains(INVALID_TITLE_RESPONSE));
     }
+    @Test
+    public void creatingPostWithEmptyDescription() {
+        PostRequestBody postBody = PostRegistry.getNormalNonDraftPostWithEmptyDescription();
+        ErrorResponseBodyByPostDescription response = postRequest(CREATE_POST, 400, postBody)
+                .body().jsonPath().getObject("", ErrorResponseBodyByPostDescription.class);
+        assertTrue(response.getDescription().get(0).contains(EMPTY_DESCRIPTION_RESPONSE));
+        assertTrue(response.getDescription().get(1).contains(INVALID_DESCRIPTION_RESPONSE));
+    }
+
 }

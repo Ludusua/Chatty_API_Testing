@@ -58,11 +58,23 @@ public class PostRegistry {
         Faker faker = new Faker();
         String paragraph = faker.lorem().paragraph();
         PostRequestBody post = new PostRequestBody();
-        post.setTitle("");
+        post.setTitle("Not updated post");
         post.setDescription("First post created with Rest Assured");
         post.setBody(paragraph);
         post.setImageUrl("");
         post.setPublishDate("2024-11-25 19:18");
+        post.setDraft(false);
+        return post;
+    }
+    public static PostRequestBody getNormalNonDraftPostWithEmptyDescription() {
+        Faker faker = new Faker();
+        String paragraph = faker.lorem().paragraph();
+        PostRequestBody post = new PostRequestBody();
+        post.setTitle("Normal post with empty description");
+        post.setDescription("");
+        post.setBody(paragraph);
+        post.setImageUrl("");
+        post.setPublishDate("2024-12-01 12:18");
         post.setDraft(false);
         return post;
     }
