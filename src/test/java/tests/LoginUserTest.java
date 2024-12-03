@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static tests.BaseTest.postRequestWithoutToken;
 import static tests.UtilLoginData.VALID_USER_EMAIL_FOR_LOGIN;
 import static tests.UtilLoginData.VALID_USER_PASSWORD_FOR_LOGIN;
 import static tests.UtilUrl.USER_LOGIN;
 
-public class LoginUserTest {
+public class LoginUserTest extends BaseTest{
     @Test
     public void successUserLogin() {
         LoginUserRequestBody requestBody = new LoginUserRequestBody(VALID_USER_EMAIL_FOR_LOGIN,VALID_USER_PASSWORD_FOR_LOGIN);

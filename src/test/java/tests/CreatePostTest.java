@@ -4,12 +4,11 @@ import dto.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static tests.BaseTest.postRequest;
 import static tests.UtilResponseData.*;
 import static tests.UtilUrl.CREATE_POST;
 
 
-public class CreatePostTest {
+public class CreatePostTest extends BaseTest{
     @Test
     public void successNonDraftPostCreating() {
         PostRequestBody postBody = PostRegistry.getNormalNonDraftPost();

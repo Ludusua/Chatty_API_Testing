@@ -23,7 +23,7 @@ public class BaseTest {
             .setContentType(ContentType.JSON)
             .build();
 
-    public static Response getRequest(String endPoint, int expectedStatusCode) {
+    protected Response getRequest(String endPoint, int expectedStatusCode) {
         Response response = given()
                 .spec(specification)
                 .when()
@@ -36,7 +36,7 @@ public class BaseTest {
         return response;
     }
 
-    public static Response getRequestWithoutToken(String endPoint, int expectedStatusCode) {
+    protected Response getRequestWithoutToken(String endPoint, int expectedStatusCode) {
         Response response = given()
                 .spec(specWithoutToken)
                 .when()
@@ -62,7 +62,7 @@ public class BaseTest {
         return response;
     }
 
-    public static Response postRequest(String endPoint, int expectedStatusCode, Object body) {
+    protected Response postRequest(String endPoint, int expectedStatusCode, Object body) {
         Response response = given()
                 .spec(specification)
                 .body(body)
@@ -76,7 +76,7 @@ public class BaseTest {
         return response;
     }
 
-    public static Response postRequestWithoutBody(String endPoint, int expectedStatusCode) {
+    protected Response postRequestWithoutBody(String endPoint, int expectedStatusCode) {
         Response response = given()
                 .spec(specification)
                 .when()
@@ -89,7 +89,7 @@ public class BaseTest {
         return response;
     }
 
-    public static Response postRequestWithoutToken(String endPoint, int expectedStatusCode, Object body) {
+    protected Response postRequestWithoutToken(String endPoint, int expectedStatusCode, Object body) {
         Response response = given()
                 .spec(specWithoutToken)
                 .body(body)
