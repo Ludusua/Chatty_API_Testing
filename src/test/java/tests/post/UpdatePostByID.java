@@ -1,12 +1,13 @@
-package tests;
+package tests.post;
 
-import dto.PostRegistry;
-import dto.PostRequestBody;
-import dto.PostResponseBodyByID;
+import dto.request.PostRegistry;
+import dto.request.PostRequestBody;
+import dto.response.PostResponseBodyByID;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static tests.UtilUrl.UPDATE_POST_BY_ID;
+import static tests.utils.UtilUrl.UPDATE_POST_BY_ID;
 
 
 public class UpdatePostByID extends BaseTest {

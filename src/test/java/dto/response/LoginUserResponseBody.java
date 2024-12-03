@@ -1,13 +1,13 @@
-package dto;
+package dto.response;
 
-public class RegistrationUserResponseBody {
+public class LoginUserResponseBody {
     private String accessToken;
     private String refreshToken;
     private int  expiration;
-    public RegistrationUserResponseBody() {
+    public LoginUserResponseBody() {
     }
 
-    public RegistrationUserResponseBody(String accessToken, String refreshToken, int expiration) {
+    public LoginUserResponseBody(String accessToken, String refreshToken, int expiration) {
         this.accessToken = accessToken;
         this.refreshToken = refreshToken;
         this.expiration = expiration;

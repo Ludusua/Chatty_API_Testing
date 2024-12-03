@@ -1,12 +1,9 @@
-package tests;
+package tests.post;
 
-import dto.PostRegistry;
-import dto.PostRequestBody;
-import dto.PostResponseBodyByID;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static tests.UtilUrl.*;
+import static tests.utils.UtilUrl.*;
 
 
 public class DeletePostByID extends BaseTest {

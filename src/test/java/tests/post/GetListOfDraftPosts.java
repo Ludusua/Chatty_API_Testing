@@ -1,12 +1,13 @@
-package tests;
+package tests.post;
 
-import dto.PostResponseBodyByID;
+import dto.response.PostResponseBodyByID;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static tests.UtilUrl.GET_DRAFT_POSTS;
+import static tests.utils.UtilUrl.GET_DRAFT_POSTS;
 
 public class GetListOfDraftPosts extends BaseTest {
     @Test

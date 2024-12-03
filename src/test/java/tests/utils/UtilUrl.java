@@ -1,4 +1,4 @@
-package tests;
+package tests.utils;
 
 public class UtilUrl {
 

@@ -1,29 +1,31 @@
-package dto;
+package dto.response;
 
-public class PostResponseBody {
+import dto.User;
+
+public class PostResponseBodyByID {
     private String id;
     private String title;
     private String description;
     private String body;
     private String imageUrl;
-    private String publishDate;
+    private String createdAt;
     private String updatedAt;
     private boolean draft;
-    private String userId;
+    private User user;
 
-    public PostResponseBody() {
+    public PostResponseBodyByID() {
     }
 
-    public PostResponseBody(String id, String title, String description, String body, String imageUrl, String publishDate, String updatedAt, boolean draft, String userId) {
+    public PostResponseBodyByID(String id, String title, String description, String body, String imageUrl, String createdAt, String updatedAt, boolean draft, User user) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.body = body;
         this.imageUrl = imageUrl;
-        this.publishDate = publishDate;
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.draft = draft;
-        this.userId = userId;
+        this.user = user;
     }
 
     public String getId() {
@@ -66,12 +68,12 @@ public class PostResponseBody {
         this.imageUrl = imageUrl;
     }
 
-    public String getPublishDate() {
-        return publishDate;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPublishDate(String publishDate) {
-        this.publishDate = publishDate;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedAt() {
@@ -90,11 +92,11 @@ public class PostResponseBody {
         this.draft = draft;
     }
 
-    public String getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

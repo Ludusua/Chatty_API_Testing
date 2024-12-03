@@ -1,4 +1,4 @@
-package tests;
+package tests.utils;
 
 public class UtilLoginData {
     public static final String VALID_USER_EMAIL_FOR_LOGIN = "wyatt.kihn@yahoo.com";

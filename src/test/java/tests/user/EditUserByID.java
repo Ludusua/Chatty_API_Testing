@@ -1,13 +1,14 @@
-package tests;
+package tests.user;
 
 import dto.User;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static tests.UtilUrl.PUT_USER_BY_ID;
+import static tests.utils.UtilUrl.PUT_USER_BY_ID;
 
-public class EditUserByID extends BaseTest{
+public class EditUserByID extends BaseTest {
 
     @Test
     public void successUserEdit() {

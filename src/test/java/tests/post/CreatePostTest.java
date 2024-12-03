@@ -1,14 +1,19 @@
-package tests;
+package tests.post;
 
-import dto.*;
+import dto.errorresponse.ErrorResponseBodyByPostDescription;
+import dto.errorresponse.ErrorResponseBodyByPostTitle;
+import dto.request.PostRegistry;
+import dto.request.PostRequestBody;
+import dto.response.PostResponseBody;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static tests.UtilResponseData.*;
-import static tests.UtilUrl.CREATE_POST;
+import static tests.utils.UtilResponseData.*;
+import static tests.utils.UtilUrl.CREATE_POST;
 
 
-public class CreatePostTest extends BaseTest{
+public class CreatePostTest extends BaseTest {
     @Test
     public void successNonDraftPostCreating() {
         PostRequestBody postBody = PostRegistry.getNormalNonDraftPost();

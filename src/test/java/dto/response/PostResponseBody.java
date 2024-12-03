@@ -1,25 +1,38 @@
-package dto;
+package dto.response;
 
-public class PostRequestBody {
+public class PostResponseBody {
+    private String id;
     private String title;
     private String description;
     private String body;
     private String imageUrl;
     private String publishDate;
+    private String updatedAt;
     private boolean draft;
+    private String userId;
 
-    public PostRequestBody(String title, String description, String body, String imageUrl, String publishDate, boolean draft) {
+    public PostResponseBody() {
+    }
+
+    public PostResponseBody(String id, String title, String description, String body, String imageUrl, String publishDate, String updatedAt, boolean draft, String userId) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.body = body;
         this.imageUrl = imageUrl;
         this.publishDate = publishDate;
+        this.updatedAt = updatedAt;
         this.draft = draft;
+        this.userId = userId;
     }
 
-    public PostRequestBody() {
+    public String getId() {
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -61,11 +74,27 @@ public class PostRequestBody {
         this.publishDate = publishDate;
     }
 
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     public boolean isDraft() {
         return draft;
     }
 
     public void setDraft(boolean draft) {
         this.draft = draft;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

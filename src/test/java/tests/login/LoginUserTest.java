@@ -1,16 +1,17 @@
-package tests;
+package tests.login;
 
-import dto.LoginUserRequestBody;
-import dto.RegistrationUserResponseBody;
+import dto.request.LoginUserRequestBody;
+import dto.response.RegistrationUserResponseBody;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static tests.UtilLoginData.VALID_USER_EMAIL_FOR_LOGIN;
-import static tests.UtilLoginData.VALID_USER_PASSWORD_FOR_LOGIN;
-import static tests.UtilUrl.USER_LOGIN;
+import static tests.utils.UtilLoginData.VALID_USER_EMAIL_FOR_LOGIN;
+import static tests.utils.UtilLoginData.VALID_USER_PASSWORD_FOR_LOGIN;
+import static tests.utils.UtilUrl.USER_LOGIN;
 
-public class LoginUserTest extends BaseTest{
+public class LoginUserTest extends BaseTest {
     @Test
     public void successUserLogin() {
         LoginUserRequestBody requestBody = new LoginUserRequestBody(VALID_USER_EMAIL_FOR_LOGIN,VALID_USER_PASSWORD_FOR_LOGIN);

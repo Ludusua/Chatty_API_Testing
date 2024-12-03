@@ -1,12 +1,13 @@
-package tests;
+package tests.registration;
 
 import com.github.javafaker.Faker;
-import dto.RegistrationUserRequestBody;
-import dto.RegistrationUserResponseBody;
+import dto.request.RegistrationUserRequestBody;
+import dto.response.RegistrationUserResponseBody;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static tests.UtilUrl.USER_REGISTRATION;
+import static tests.utils.UtilUrl.USER_REGISTRATION;
 
 public class RegistrationUserTest extends BaseTest {
 

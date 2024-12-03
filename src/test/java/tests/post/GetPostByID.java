@@ -1,13 +1,14 @@
-package tests;
+package tests.post;
 
-import dto.ErrorResponseBody;
-import dto.PostResponseBodyByID;
+import dto.errorresponse.ErrorResponseBody;
+import dto.response.PostResponseBodyByID;
 import org.junit.jupiter.api.Test;
+import tests.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static tests.UtilResponseData.INVALID_STATUS;
-import static tests.UtilResponseData.INVALID_UUID;
-import static tests.UtilUrl.*;
+import static tests.utils.UtilResponseData.INVALID_STATUS;
+import static tests.utils.UtilResponseData.INVALID_UUID;
+import static tests.utils.UtilUrl.*;
 
 public class GetPostByID extends BaseTest {
     @Test

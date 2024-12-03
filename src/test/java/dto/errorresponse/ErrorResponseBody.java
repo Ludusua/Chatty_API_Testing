@@ -1,4 +1,4 @@
-package dto;
+package dto.errorresponse;
 
 public class ErrorResponseBody {
     private String httpStatus;

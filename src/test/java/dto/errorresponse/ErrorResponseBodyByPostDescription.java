@@ -1,4 +1,4 @@
-package dto;
+package dto.errorresponse;
 
 import java.util.List;
 
