@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class BaseTest {
     final static String BASE_URI = "http://chatty.telran-edu.de:8989";
-    final static String TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4NDFkNjQzNC00ZDQwLTQ2MTgtYjZjNC02MzAyYmQ4YzczNjQiLCJpYXQiOjE3MzMwNjczNzYsImV4cCI6MTczMzI0MDE3Nn0.gW3__uKvbjaqNnvnmMpQbHjgDYLA6H5aY1jP1D_f3dU";
+    final static String TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4NDFkNjQzNC00ZDQwLTQ2MTgtYjZjNC02MzAyYmQ4YzczNjQiLCJpYXQiOjE3MzM2Njg5NjIsImV4cCI6MTczMzg0MTc2Mn0.OFTydgSFKzNGzyiCNM58icxUCLhBhMNJntzC9f5y6j8";
     static RequestSpecification specification = new RequestSpecBuilder()
             .setBaseUri(BASE_URI)
             .addHeader("Authorization", "Bearer " + TOKEN)
@@ -142,6 +142,7 @@ public class BaseTest {
         response.then().assertThat().statusCode(expectedStatusCode);
         return response;
     }
+
     protected Response deleteRequestWithParam(String endpoint, int expectedStatusCode, String paramName, String paramValue) {
         Response response = RestAssured.given()
                 .spec(specification)

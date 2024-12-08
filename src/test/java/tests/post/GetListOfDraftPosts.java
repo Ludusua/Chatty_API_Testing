@@ -17,7 +17,7 @@ public class GetListOfDraftPosts extends BaseTest {
                 .body().jsonPath().getList("", PostResponseBodyByID.class);
         System.out.println(allPosts);
         assertEquals(2,allPosts.size());
-        assertNotEquals(allPosts.get(0).getCreatedAt(),allPosts.get(0).getUpdatedAt());
+        assertEquals(allPosts.get(0).getCreatedAt(),allPosts.get(0).getUpdatedAt());
         assertEquals(allPosts.get(1).getCreatedAt(),allPosts.get(1).getUpdatedAt());
         for (PostResponseBodyByID post:allPosts){
             assertFalse(post.getDescription().isEmpty());

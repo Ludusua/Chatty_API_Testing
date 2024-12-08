@@ -60,5 +60,4 @@ public class CreatePostTest extends BaseTest {
         assertTrue(response.getDescription().get(0).contains(EMPTY_DESCRIPTION_RESPONSE));
         assertTrue(response.getDescription().get(1).contains(INVALID_DESCRIPTION_RESPONSE));
     }
-
 }
